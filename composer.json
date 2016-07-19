@@ -1,6 +1,6 @@
 {
     "name" : "nti/log-bundle",
-    "description" : "NTI/LogBundle",
+    "description" : "Symfony NTILogBundle",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Benjamin Vison",

@@ -1,1 +1,1 @@
-### LogBundle for Symfony2
+### NTILogBundle for Symfony2
