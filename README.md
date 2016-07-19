@@ -1,1 +1,1 @@
-### NTI: LogBundle for Symfony2
+### LogBundle for Symfony2
