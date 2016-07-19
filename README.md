@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### vLog bundle for Symfony2.
 This bundle provides the functionality to log kernel events
 
@@ -22,3 +23,7 @@ composer require nti/log-bundle
 
 ### Author
 Created by @bntil
+=======
+# LogBundle
+Bundle used to log doctrine and exception events. Also has a service to use on demand.
+>>>>>>> 2ea6ae8afac6ea4b40de7487c08ac1ec5828bbf2
