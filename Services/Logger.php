@@ -1,6 +1,6 @@
 <?php
 
-namespace NTI\LogBundle;
+namespace NTI\LogBundle\Services;
 
 use AppBundle\Entity\User\User;
 use Doctrine\Common\Annotations\AnnotationReader;

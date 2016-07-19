@@ -13,5 +13,5 @@ services:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
 
     nti.logger:
-        class: NTI\LogBundle\Logger
+        class: NTI\LogBundle\Services\Logger
         arguments: ["@service_container"]
