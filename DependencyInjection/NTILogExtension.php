@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class LogExtension extends Extension
+class NTILogExtension extends Extension
 {
     private $defaultConfiguration = array(
         'database' => array(
@@ -38,7 +38,7 @@ class LogExtension extends Extension
         $loader->load('config.yml');
 
         $aAsseticBundle = $container->getParameter('assetic.bundles');
-        $aAsseticBundle[] = 'LogBundle';
+        $aAsseticBundle[] = 'NTILogBundle';
         $container->setParameter('assetic.bundles', $aAsseticBundle);
 
         // Parse configuration

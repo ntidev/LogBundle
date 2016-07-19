@@ -12,15 +12,7 @@ use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 use Symfony\Component\Security\Core\SecurityContext;
 use NTI\LogBundle\Entity\Log;
-
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
-
-use JMS\Serializer\SerializerBuilder;
-use NTI\LogBundle\Logger;
+use NTI\LogBundle\Services\Logger;
 
 class DoctrineEventSubscriber implements EventSubscriber
 {
