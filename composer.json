@@ -1,13 +1,13 @@
 {
     "name" : "nti/log-bundle",
-    "description" : "vLog Bundle",
+    "description" : "NTI/LogBundle",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Benjamin Vison",
-        "email" : "bvisonl@gmail.com"
+        "email" : "benjamin@syneteksolutions.com"
     }],
     "keywords" : [
-        "vLog Bundle"
+        "LogBundle"
     ],
     "license" : [
         "MIT"
