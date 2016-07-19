@@ -1,0 +1,17 @@
+services:
+
+    nti.log.doctrine.listener:
+        class: NTI\LogBundle\EventListener\DoctrineEventSubscriber
+        arguments: ["@service_container"]
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+
+    nti.kernel.listener.kernelexception:
+        class: NTI\LogBundle\EventListener\KernelExceptionListener
+        arguments: ["@service_container"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    nti.logger:
+        class: NTI\LogBundle\Logger
+        arguments: ["@service_container"]

@@ -1,0 +1,4 @@
+nti_log:
+    resource: "@LogBundle/Controller/"
+    type:     annotation
+    prefix:   /nti/log

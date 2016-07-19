@@ -1,0 +1,31 @@
+{
+    "name" : "nti/log-bundle",
+    "description" : "vLog Bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Benjamin Vison",
+        "email" : "bvisonl@gmail.com"
+    }],
+    "keywords" : [
+        "vLog Bundle"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "symfony/serializer": "2.x"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "NTI\\LogBundle" : ""
+        }
+    },
+    "target-dir" : "NTI/LogBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "1.0-dev"
+        }
+    }
+}
