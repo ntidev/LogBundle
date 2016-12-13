@@ -6,7 +6,7 @@ use NTI\LogBundle\Annotations\ExcludeDoctrineLogging;
  * Log
  * @ExcludeDoctrineLogging()
  * @ORM\Table(name="nti_log")
- * @ORM\Entity(repositoryClass="NTI\LogBundle\Entity\Repository\LogRepository")
+ * @ORM\Entity()
  * @ORM\HasLifecycleCallbacks()
  */
 class Log

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a71799-428e-48e7-8e96-a0b4c9b98dcb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" afterPath="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Entity/Log.php" afterPath="$PROJECT_DIR$/Entity/Log.php" />
     </list>
     <ignored path="LogBundle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,11 +42,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NTILogExtension.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NTILogExtension.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DependencyInjection/NTILogExtension.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="319">
               <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Log.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Entity/Log.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -74,6 +84,7 @@
         <option value="$PROJECT_DIR$/Controller/LogController.php" />
         <option value="$PROJECT_DIR$/Resources/views/Log/index.html.twig" />
         <option value="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" />
+        <option value="$PROJECT_DIR$/Entity/Log.php" />
       </list>
     </option>
   </component>
@@ -114,6 +125,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -220,7 +245,7 @@
       <updated>1468934818605</updated>
       <workItem from="1468934820047" duration="2307000" />
       <workItem from="1471013963203" duration="657000" />
-      <workItem from="1481660494419" duration="214000" />
+      <workItem from="1481660494419" duration="479000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1468934953888</created>
@@ -254,7 +279,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3178000" />
+    <option name="totallyTimeSpent" value="3443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="26" width="1936" height="978" extended-state="6" />
@@ -381,6 +406,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Entity/Log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
           <folding />
         </state>
       </provider>
