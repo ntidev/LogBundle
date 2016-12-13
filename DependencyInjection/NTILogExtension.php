@@ -37,10 +37,6 @@ class NTILogExtension extends Extension
         $loader->load('services.yml');
         $loader->load('config.yml');
 
-        $aAsseticBundle = $container->getParameter('assetic.bundles');
-        $aAsseticBundle[] = 'NTILogBundle';
-        $container->setParameter('assetic.bundles', $aAsseticBundle);
-
         // Parse configuration
         if(isset($config['database']) && isset($config['database']['connection_name']))
             $this->defaultConfiguration['database']['connection_name'] = $config['database']['connection_name'];

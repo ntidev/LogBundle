@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1a71799-428e-48e7-8e96-a0b4c9b98dcb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/views/Log/layout.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/views/Log/logs.html.twig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Resources/views/Log/show.html.twig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Annotations/ExcludeDoctrineLogging.php" afterPath="$PROJECT_DIR$/Annotations/ExcludeDoctrineLogging.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Controller/LogController.php" afterPath="$PROJECT_DIR$/Controller/LogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DependencyInjection/Configuration.php" afterPath="$PROJECT_DIR$/DependencyInjection/Configuration.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" afterPath="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Entity/Log.php" afterPath="$PROJECT_DIR$/Entity/Log.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventListener/DoctrineEventSubscriber.php" afterPath="$PROJECT_DIR$/EventListener/DoctrineEventSubscriber.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EventListener/KernelExceptionListener.php" afterPath="$PROJECT_DIR$/EventListener/KernelExceptionListener.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NTILogBundle.php" afterPath="$PROJECT_DIR$/NTILogBundle.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/config/services.yml" afterPath="$PROJECT_DIR$/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/views/Log/index.html.twig" afterPath="$PROJECT_DIR$/Resources/views/Log/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Services/Logger.php" afterPath="$PROJECT_DIR$/Services/Logger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/Controller/VLogControllerTest.php" afterPath="$PROJECT_DIR$/Tests/Controller/VLogControllerTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
     </list>
     <ignored path="LogBundle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/views/Log/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="48" lean-forward="true" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NTILogExtension.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DependencyInjection/NTILogExtension.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,10 +70,10 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Services/Logger.php" />
         <option value="$PROJECT_DIR$/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" />
         <option value="$PROJECT_DIR$/EventListener/DoctrineEventSubscriber.php" />
         <option value="$PROJECT_DIR$/Controller/LogController.php" />
         <option value="$PROJECT_DIR$/Resources/views/Log/index.html.twig" />
+        <option value="$PROJECT_DIR$/DependencyInjection/NTILogExtension.php" />
       </list>
     </option>
   </component>
@@ -121,6 +114,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DependencyInjection" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -213,7 +220,7 @@
       <updated>1468934818605</updated>
       <workItem from="1468934820047" duration="2307000" />
       <workItem from="1471013963203" duration="657000" />
-      <workItem from="1481660494419" duration="50000" />
+      <workItem from="1481660494419" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <created>1468934953888</created>
@@ -247,13 +254,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3014000" />
+    <option name="totallyTimeSpent" value="3178000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="26" width="1936" height="978" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20364584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20364584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -319,13 +326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DependencyInjection/NTILogExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="46" column="40" lean-forward="false" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EventListener/DoctrineEventSubscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -373,6 +373,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="48" lean-forward="true" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DependencyInjection/NTILogExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
