@@ -18,10 +18,8 @@ class NTILogExtension extends Extension
         'database' => array(
             'connection_name' => 'default',
         ),
-        'exceptions' => array(
-            'errors_only' => '',
+        'exclude' => array(            
         )
-
     );
 
     /**
@@ -40,13 +38,11 @@ class NTILogExtension extends Extension
         // Parse configuration
         if(isset($config['database']) && isset($config['database']['connection_name']))
             $this->defaultConfiguration['database']['connection_name'] = $config['database']['connection_name'];
-        if(isset($config['exceptions']) && isset($config['exceptions']['errors_only']))
-            $this->defaultConfiguration['exceptions']['errors_only'] = $config['exceptions']['errors_only'];
+        if(isset($config['exclude']))
+            $this->defaultConfiguration['exclude'] = $config['exclude'];
 
         $container->setParameter( 'nti_log.database.connection_name', $this->defaultConfiguration['database']['connection_name']);
-        $container->setParameter( 'nti_log.exceptions.errors_only', $this->defaultConfiguration['exceptions']['errors_only']);
-
-
+        $container->setParameter( 'nti_log.exclude', $this->defaultConfiguration['exclude']);
 
     }
 }
