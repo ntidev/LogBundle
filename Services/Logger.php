@@ -67,9 +67,8 @@ class Logger {
 
         if(null !== $entity) {
 
-            $excludes = array_merge(
-                $this->container->getParameter('nti_log.exclude'),
-            );
+            $excludes = $this->container->getParameter('nti_log.exclude');
+            
             if(!is_array($excludes)) {
                 $excludes = [];
             }
