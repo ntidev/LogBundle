@@ -76,9 +76,9 @@ class Logger {
 
         $slack = $this->container->get('nexy_slack.client');
 
-        $message = $slack->createMessage();
+        $slackMessage = $slack->createMessage();
 
-        $message
+        $slackMessage
             ->to($channel)
             ->from($from)
             ->withIcon($icon)
@@ -86,7 +86,7 @@ class Logger {
         ;
 
         try {
-            $slack->sendMessage($message);
+            $slack->sendMessage($slackMessage);
         } catch (\Exception $ex) {
             $this->logException(new SlackException($ex->getMessage(), $ex->getCode()));
         }

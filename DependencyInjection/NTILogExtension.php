@@ -52,12 +52,16 @@ class NTILogExtension extends Extension
             $this->defaultConfiguration['database']['connection_name'] = $config['database']['connection_name'];
         if(isset($config['exclude']))
             $this->defaultConfiguration['exclude'] = $config['exclude'];
+        if(isset($config["nexy_slack"])) {
+            $this->defaultConfiguration['nexy_slack'] = array_merge($this->defaultConfiguration['nexy_slack'], $configs['nexy_slack']);
+        }
+
 
         $container->setParameter( 'nti_log.database.connection_name', $this->defaultConfiguration['database']['connection_name']);
         $container->setParameter( 'nti_log.exclude', $this->defaultConfiguration['exclude']);
         $container->setParameter( 'nti_log.nexy_slack.enabled', $this->defaultConfiguration['nexy_slack']['enabled']);
         $container->setParameter( 'nti_log.nexy_slack.replicate_logs', $this->defaultConfiguration['nexy_slack']['replicate_logs']);
-        $container->setParameter( 'nti_log.nexy_slack.repliacte_levels', $this->defaultConfiguration['nexy_slack']['replicate_levels']);
+        $container->setParameter( 'nti_log.nexy_slack.replicate_levels', $this->defaultConfiguration['nexy_slack']['replicate_levels']);
         $container->setParameter( 'nti_log.nexy_slack.channel', $this->defaultConfiguration['nexy_slack']['channel']);
         $container->setParameter( 'nti_log.nexy_slack.from', $this->defaultConfiguration['nexy_slack']['from']);
         $container->setParameter( 'nti_log.nexy_slack.icon', $this->defaultConfiguration['nexy_slack']['icon']);
