@@ -174,6 +174,14 @@ class Logger {
         $slackReplicateLevels = $this->container->getParameter('nti_log.nexy_slack.replicate_levels');
 
         if($slackEnabled && $slackReplicate && in_array($level, $slackReplicateLevels) && ($ex instanceof SlackException == false)) {
+
+            if(null !== $ex) {
+                $message .= "\n";
+                $message .= "Exception Message: ".$ex->getMessage() . "\n";
+                $message .= "Exception File: ".$ex->getFile() . "\n";
+                $message .= "Exception Line: ".$ex->getLine() . "\n";
+            }
+
             $this->logSlack($message, $level, $entity);
         }
     }
