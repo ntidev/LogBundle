@@ -26,8 +26,8 @@ class NTILogExtension extends Extension
         // https://github.com/nexylan/slack-bundle
         'nexy_slack' => array(
             'enabled' => false,
-            'replicate_log' => false,
-            'replication_levels' => array(Log::LEVEL_ERROR),
+            'replicate_logs' => false,
+            'replicate_levels' => array(Log::LEVEL_ERROR, Log::LEVEL_DEBUG),
         )
     );
 
@@ -53,8 +53,8 @@ class NTILogExtension extends Extension
         $container->setParameter( 'nti_log.database.connection_name', $this->defaultConfiguration['database']['connection_name']);
         $container->setParameter( 'nti_log.exclude', $this->defaultConfiguration['exclude']);
         $container->setParameter( 'nti_log.nexy_slack.enabled', $this->defaultConfiguration['nexy_slack']['enabled']);
-        $container->setParameter( 'nti_log.nexy_slack.replicate_log', $this->defaultConfiguration['nexy_slack']['replicate_log']);
-        $container->setParameter( 'nti_log.nexy_slack.repliaction_levels', $this->defaultConfiguration['nexy_slack']['replication_levels']);
+        $container->setParameter( 'nti_log.nexy_slack.replicate_logs', $this->defaultConfiguration['nexy_slack']['replicate_logs']);
+        $container->setParameter( 'nti_log.nexy_slack.repliacte_levels', $this->defaultConfiguration['nexy_slack']['replicate_levels']);
 
     }
 }
