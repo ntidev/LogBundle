@@ -28,6 +28,9 @@ class NTILogExtension extends Extension
             'enabled' => false,
             'replicate_logs' => false,
             'replicate_levels' => array(Log::LEVEL_ERROR, Log::LEVEL_DEBUG),
+            'channel' => null,
+            'from' => 'NTILogBundle',
+            'icon' => ':ghost:',
         )
     );
 
@@ -55,6 +58,9 @@ class NTILogExtension extends Extension
         $container->setParameter( 'nti_log.nexy_slack.enabled', $this->defaultConfiguration['nexy_slack']['enabled']);
         $container->setParameter( 'nti_log.nexy_slack.replicate_logs', $this->defaultConfiguration['nexy_slack']['replicate_logs']);
         $container->setParameter( 'nti_log.nexy_slack.repliacte_levels', $this->defaultConfiguration['nexy_slack']['replicate_levels']);
+        $container->setParameter( 'nti_log.nexy_slack.channel', $this->defaultConfiguration['nexy_slack']['channel']);
+        $container->setParameter( 'nti_log.nexy_slack.from', $this->defaultConfiguration['nexy_slack']['from']);
+        $container->setParameter( 'nti_log.nexy_slack.icon', $this->defaultConfiguration['nexy_slack']['icon']);
 
     }
 }

@@ -7,6 +7,7 @@ use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\DBAL\Connection;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerBuilder;
+use NTI\LogBundle\Exception\SlackException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use NTI\LogBundle\Entity\Log;
 
@@ -61,6 +62,35 @@ class Logger {
     
     public function logException(\Exception $ex) {
         $this->log($ex->getMessage(), Log::ACTION_EXCEPTION, null, Log::LEVEL_ERROR, $ex);
+    }
+
+    public function logSlack($message, $level = Log::LEVEL_NOTICE, $entity = null) {
+        if(!$this->container->has('nexy_slack.client')) {
+            $this->log("Attempted to use Slack logging but the bundle is not properly configured.");
+            return;
+        }
+
+        $channel = $this->container->getParameter('nti_log.nexy_slack.channel');
+        $from = $this->container->getParameter('nti_log.nexy_slack.from');
+        $icon = $this->container->getParameter('nti_log.nexy_slack.icon');
+
+        $slack = $this->get('nexy_slack.client');
+
+        $message = $slack->createMessage();
+
+        $message
+            ->to($channel)
+            ->from($from)
+            ->withIcon($icon)
+            ->setText($message)
+        ;
+
+        try {
+            $slack->sendMessage($message);
+        } catch (\Exception $ex) {
+            $this->logException(new SlackException($ex->getMessage(), $ex->getCode()));
+        }
+
     }
 
     private function log($message, $action = Log::ACTION_INFO, $entity = null, $level = Log::LEVEL_NOTICE, \Exception $ex = null) {
@@ -136,6 +166,15 @@ class Logger {
             $stmt->execute();
         } catch(\Exception $ex) {
             error_log($ex->getMessage());
+        }
+
+        // Trigger slack logging
+        $slackEnabled = $this->container->getParameter('nti_log.nexy_slack.enabled');
+        $slackReplicate = $this->container->getParameter('nti_log.nexy_slack.replicate_logs');
+        $slackReplicateLevels = $this->container->getParameter('nti_log.nexy_slack.replicate_levels');
+
+        if($slackEnabled && $slackReplicate && in_array($level, $slackReplicateLevels) && ($ex instanceof SlackException == false)) {
+            $this->logSlack($message, $level, $entity);
         }
     }
 }
