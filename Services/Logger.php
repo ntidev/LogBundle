@@ -176,7 +176,7 @@ class Logger {
         if($slackEnabled && $slackReplicate && in_array($level, $slackReplicateLevels) && ($ex instanceof SlackException == false)) {
 
             if(null !== $ex) {
-                $message .= "\n";
+                $message = "";
                 $message .= "Exception Message: ".$ex->getMessage() . "\n";
                 $message .= "Exception File: ".$ex->getFile() . "\n";
                 $message .= "Exception Line: ".$ex->getLine() . "\n";
