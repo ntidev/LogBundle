@@ -53,7 +53,7 @@ class NTILogExtension extends Extension
         if(isset($config['exclude']))
             $this->defaultConfiguration['exclude'] = $config['exclude'];
         if(isset($config["nexy_slack"])) {
-            $this->defaultConfiguration['nexy_slack'] = array_merge($this->defaultConfiguration['nexy_slack'], $configs['nexy_slack']);
+            $this->defaultConfiguration['nexy_slack'] = array_merge($this->defaultConfiguration['nexy_slack'], $config['nexy_slack']);
         }
 
 
