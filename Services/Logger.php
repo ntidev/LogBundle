@@ -74,7 +74,7 @@ class Logger {
         $from = $this->container->getParameter('nti_log.nexy_slack.from');
         $icon = $this->container->getParameter('nti_log.nexy_slack.icon');
 
-        $slack = $this->get('nexy_slack.client');
+        $slack = $this->container->get('nexy_slack.client');
 
         $message = $slack->createMessage();
 
