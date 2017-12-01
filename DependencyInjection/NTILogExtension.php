@@ -2,6 +2,7 @@
 
 namespace NTI\LogBundle\DependencyInjection;
 
+use NTI\LogBundle\Entity\Log;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -18,7 +19,15 @@ class NTILogExtension extends Extension
         'database' => array(
             'connection_name' => 'default',
         ),
-        'exclude' => array(            
+        'exclude' => array(
+
+        ),
+        // Integration with NexySlackBundle
+        // https://github.com/nexylan/slack-bundle
+        'nexy_slack' => array(
+            'enabled' => false,
+            'replicate_log' => false,
+            'replication_levels' => array(Log::LEVEL_ERROR),
         )
     );
 
@@ -43,6 +52,9 @@ class NTILogExtension extends Extension
 
         $container->setParameter( 'nti_log.database.connection_name', $this->defaultConfiguration['database']['connection_name']);
         $container->setParameter( 'nti_log.exclude', $this->defaultConfiguration['exclude']);
+        $container->setParameter( 'nti_log.nexy_slack.enabled', $this->defaultConfiguration['nexy_slack']['enabled']);
+        $container->setParameter( 'nti_log.nexy_slack.replicate_log', $this->defaultConfiguration['nexy_slack']['replicate_log']);
+        $container->setParameter( 'nti_log.nexy_slack.repliaction_levels', $this->defaultConfiguration['nexy_slack']['replication_levels']);
 
     }
 }
