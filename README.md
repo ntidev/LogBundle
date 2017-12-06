@@ -1,4 +1,4 @@
-# NTISyncBundle
+# NTILogBundle
 
 
 ### Installation
@@ -114,3 +114,7 @@ nexy_slack:
     # The Slack API Incoming WebHooks URL.
     endpoint: "[see https://api.slack.com/tokens to generate the webhook for this app]"
 ```
+
+## Todo
+
+* Make the entity configurable and also the property used to get the username
