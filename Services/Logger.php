@@ -21,7 +21,7 @@ class Logger {
     public function __construct(ContainerInterface $container) {
         $this->container = $container;
         $this->serializer = SerializerBuilder::create()->build();
-        $this->connection = $container->get('doctrine')->getConnection();
+        $this->connection = $container->get('doctrine')->getConnection($container->getParameter('nti_log.database.connection_name'));
     }
 
     public function getUser()
@@ -93,7 +93,9 @@ class Logger {
 
     }
 
-    private function log($message, $action = Log::ACTION_INFO, $entity = null, $level = Log::LEVEL_NOTICE, \Exception $ex = null) {
+    private function log($message, $action = Log::ACTION_INFO, $entity = null, $level = Log::LEVEL_NOTICE, \Exception $ex = null) 
+    {
+        $app_name = $this->container->getParameter('app_short_name');
 
         if(null !== $entity) {
 
@@ -121,6 +123,7 @@ class Logger {
         }
 
         $log = new Log();
+        $log->setAppName($app_name);
         $log->setAction($action);
         $log->setLevel($level);
         if(is_object($entity)) {
@@ -139,6 +142,7 @@ class Logger {
 
         $sqlParameters = array(
           "level" => $log->getLevel(),
+          "app_name" => $log->getAppName(),
           "action" => $log->getAction(),
           "entity" => $log->getEntity(),
           "message" => $log->getMessage(),

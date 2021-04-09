@@ -24,7 +24,8 @@ class DeleteLogsCommand extends ContainerAwareCommand
         $output->writeln("Started Delete Logs.");
         $limit = $input->getArgument('limit') ?? 60;
 
-        $em = $this->getContainer()->get('doctrine')->getManager();
+        $connection_name = $this->getContainer()->getParameter('nti_log.database.connection_name');
+        $em = $this->getContainer()->get('doctrine')->getManager($connection_name);
         $month = new \DateTime('-'.$limit . ' days');
 
         /** @var QueryBuilder $qb */

@@ -39,7 +39,6 @@ class NTILogExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
@@ -56,7 +55,6 @@ class NTILogExtension extends Extension
             $this->defaultConfiguration['nexy_slack'] = array_merge($this->defaultConfiguration['nexy_slack'], $config['nexy_slack']);
         }
 
-
         $container->setParameter( 'nti_log.database.connection_name', $this->defaultConfiguration['database']['connection_name']);
         $container->setParameter( 'nti_log.exclude', $this->defaultConfiguration['exclude']);
         $container->setParameter( 'nti_log.nexy_slack.enabled', $this->defaultConfiguration['nexy_slack']['enabled']);
@@ -65,7 +63,6 @@ class NTILogExtension extends Extension
         $container->setParameter( 'nti_log.nexy_slack.channel', $this->defaultConfiguration['nexy_slack']['channel']);
         $container->setParameter( 'nti_log.nexy_slack.from', $this->defaultConfiguration['nexy_slack']['from']);
         $container->setParameter( 'nti_log.nexy_slack.icon', $this->defaultConfiguration['nexy_slack']['icon']);
-
     }
 }
 

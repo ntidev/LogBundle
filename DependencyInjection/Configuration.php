@@ -26,7 +26,11 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('connection_name')->end()
+                ->arrayNode('database')
+                    ->children()
+                        ->scalarNode('connection_name')->end()
+                    ->end()
+                ->end()
                 ->arrayNode('exceptions')
                     ->children()
                         ->arrayNode('errors_only')

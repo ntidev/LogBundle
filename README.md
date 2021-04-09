@@ -24,22 +24,39 @@ public function registerBundles()
 }
 ```
 
-3. Setup the configuration in the ``config.yml``
+3. Set a specific connection for LogBundle with the given name in config.yml
+
+```
+# Doctrine Configuration
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                YOUR DEFAULT CONNECTION CONFIGURATION
+
+            nti_logging:
+                 YOUR NTI LOGGING CONNECTION CONFIGURATION
+```
+See [How to Work with multiple Entity Managers and Connections](https://symfony.com/doc/3.4/doctrine/multiple_entity_managers.html "https://symfony.com/doc/3.4/doctrine/multiple_entity_managers.html")
+
+4. Setup the configuration in the ``config.yml``
 
 ```
 # NTI
 nti_log:
+    database:
+        connection_name: nti_logs
     exclude: [ 'JMose\CommandSchedulerBundle\Entity\ScheduledCommand' ]     # default: []
 ```
 
 The ``exclude`` allows you to exclude logging for specific entities that change at a rapid rate (for example the User entity usually registers changes when users log in)
 
-4. Update the database schema
+5. Update the database schema
 
 ```
 $ php app/console doctrine:schema:update
 ```
-
 
 ### Usage
 
