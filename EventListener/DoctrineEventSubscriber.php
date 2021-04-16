@@ -27,32 +27,10 @@ class DoctrineEventSubscriber implements EventSubscriber
     public function getSubscribedEvents()
     {
         return array(
-            'postPersist',
-            'postUpdate',
             'preRemove',
         );
     }
-    
-    public function postPersist(LifecycleEventArgs $args)
-    {
-        $this->logger = new Logger($this->container);
-        $entity = $args->getEntity();
-        if(is_string($entity)) {
-            $entity = null;
-        }
-        $this->logger->logSuccess("Created ".get_class($entity).".", Log::ACTION_CREATE, $entity);
-    }
-    
-    public function postUpdate(LifecycleEventArgs $args)
-    {
-        $this->logger = new Logger($this->container);
-        $entity = $args->getEntity();
-        if(is_string($entity)) {
-            $entity = null;
-        }
-        $this->logger->logSuccess("Updated ".get_class($entity).".", Log::ACTION_UPDATE, $entity);
-    }    
-    
+     
     public function preRemove(LifecycleEventArgs $args)
     {
         $this->logger = new Logger($this->container);
