@@ -95,7 +95,7 @@ class Logger {
 
     private function log($message, $action = Log::ACTION_INFO, $entity = null, $level = Log::LEVEL_NOTICE, \Exception $ex = null) 
     {
-        $app_name = $this->container->getParameter('app_short_name');
+        $app_name = $this->container->hasParameter("app_short_name") ? $this->container->getParameter('app_short_name') : $_SERVER["app_short_name"];
 
         if(null !== $entity) {
 
