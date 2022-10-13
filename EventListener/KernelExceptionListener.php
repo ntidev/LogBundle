@@ -4,7 +4,7 @@
 namespace NTI\LogBundle\EventListener;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
@@ -24,10 +24,10 @@ class KernelExceptionListener
     /**
      * @param GetResponseForExceptionEvent $event
      */
-    public function onKernelException(GetResponseForExceptionEvent $event)
+    public function onKernelException(ExceptionEvent $event)
     {
         // You get the exception object from the received event
-        $exception = $event->getException();
+        $exception = $event;
         $this->container->get('nti.logger')->logException($exception);
     }
 }

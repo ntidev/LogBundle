@@ -10,6 +10,7 @@ use JMS\Serializer\SerializerBuilder;
 use NTI\LogBundle\Exception\SlackException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use NTI\LogBundle\Entity\Log;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 class Logger {
 
@@ -60,8 +61,8 @@ class Logger {
         $this->log($message, $action, $entity, Log::LEVEL_ERROR);
     }
     
-    public function logException(\Exception $ex) {
-        $this->log($ex->getMessage(), Log::ACTION_EXCEPTION, null, Log::LEVEL_ERROR, $ex);
+    public function logException(ExceptionEvent $ex) {
+        $this->log($ex->getThrowable(), Log::ACTION_EXCEPTION, null, Log::LEVEL_ERROR, $ex->getResponse());
     }
 
     public function logSlack($message, $level = Log::LEVEL_NOTICE, $entity = null) {
