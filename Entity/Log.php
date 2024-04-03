@@ -4,11 +4,9 @@ use Doctrine\ORM\Mapping as ORM;
 use NTI\LogBundle\Annotations\ExcludeDoctrineLogging;
 /**
  * Log
- * @ExcludeDoctrineLogging()
- * @ORM\Table(name="nti_log")
- * @ORM\Entity()
- * @ORM\HasLifecycleCallbacks()
  */
+#[ORM\Table(name: 'nti_log')]
+ #[ORM\HasLifecycleCallbacks()]
 class Log
 {
     const LEVEL_NOTICE = "NOTICE";
@@ -26,84 +24,84 @@ class Log
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     *     
      */
+    #[ORM\Column(name: 'id', type: 'integer')]
+    #[ORM\Id]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="level", type="string", length=255)
+     *     
      */
+    #[ORM\Column(name: 'level', type: 'string', length: 255)]
     private $level;
     /**
      * @var string
-     *
-     * @ORM\Column(name="action", type="string", length=255)
+     *     
      */
+    #[ORM\Column(name: 'action', type: 'string', length: 255)]
     private $action;
     /**
      * @var string
-     *
-     * @ORM\Column(name="entity", type="text", nullable=true)
+     *     
      */
+    #[ORM\Column(name: 'entity', type: 'text', nullable: true)]
     private $entity;
     /**
      * @var string
-     *
-     * @ORM\Column(name="message", type="text")
+     *     
      */
+    #[ORM\Column(name: 'message', type: 'text')]
     private $message;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime")
+     *     
      */
+    #[ORM\Column(name: 'date', type: 'datetime')]
     private $date;
     /**
      * @var string
-     *
-     * @ORM\Column(name="ipaddress", type="string", length=255, nullable=true)
+     *     
      */
+    #[ORM\Column(name: 'ipaddress', type: 'string', length: 255, nullable: true)]
     private $ipaddress;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="user", type="string", length=255, nullable=true)
+     *     
      */
+    #[ORM\Column(name: 'user', type: 'string', length: 255, nullable: true)]
     private $user;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="exceptionCode", type="text", nullable = true)
+     *     
      */
+    #[ORM\Column(name: 'exceptionCode', type: 'text', nullable: true)]
     private $exceptionCode;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="exceptionFile", type="text", nullable = true)
+     *     
      */
+    #[ORM\Column(name: 'exceptionFile', type: 'text', nullable: true)]
     private $exceptionFile;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="exceptionLine", type="text", nullable = true)
+     *     
      */
+    #[ORM\Column(name: 'exceptionLine', type: 'text', nullable: true)]
     private $exceptionLine;
 
     /**
      * @var json
-     *
-     * @ORM\Column(name="serializedEntity", type="text", nullable=true)
+     *     
      */
+    #[ORM\Column(name: 'serializedEntity', type: 'text', nullable: true)]
     private $serializedEntity;
 
     public function __construct() {
@@ -177,10 +175,10 @@ class Log
     }
     /**
      * Set date
-     *
-     * @ORM\PrePersist()
+     *     
      * @return Log
      */
+    #[ORM\PrePersist()]
     public function setDate()
     {
         $this->date = new \DateTime("now", new \DateTimeZone("America/New_York"));
