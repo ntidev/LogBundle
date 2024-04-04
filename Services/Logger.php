@@ -11,6 +11,7 @@ use NTI\LogBundle\Exception\SlackException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use NTI\LogBundle\Entity\Log;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 
 class Logger {
 
@@ -19,16 +20,20 @@ class Logger {
     private $container;
     private $serializer;
 
+    /** @var TokenStorage $tokenStorage */
+    private $tokenStorage;
+
     public function __construct(ContainerInterface $container) {
         $this->container = $container;
         $this->serializer = SerializerBuilder::create()->build();
         $this->connection = $container->get('doctrine')->getConnection();
+        $this->tokenStorage = new TokenStorage();
     }
 
     public function getUser()
     {
 
-        if (null === $token = $this->container->get('security.token_storage')->getToken()) {
+        if (null === $token = $this->tokenStorage->getToken()) {
             // no authentication information is available
             return null;
         }
