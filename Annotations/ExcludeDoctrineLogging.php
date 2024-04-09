@@ -1,13 +1,13 @@
 <?php
 namespace NTI\LogBundle\Annotations;
 
-use Doctrine\Common\Annotations\Annotation;
+use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
 
 /**
  * @Annotation
  * @Target("CLASS")
  */
-final class ExcludeDoctrineLogging extends Annotation
+final class ExcludeDoctrineLogging extends AnnotationLoader
 {
 
 }
