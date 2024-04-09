@@ -12,6 +12,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use NTI\LogBundle\Entity\Log;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Mapping\Loader\AttributeLoader;
 
 class Logger {
 
@@ -113,8 +115,9 @@ class Logger {
                 return;
             }
 
-            $reader = new AnnotationReader();
-            $excludeByAnnotation = $reader->getClassAnnotation(new \ReflectionClass($entity), 'NTI\\LogBundle\\Annotations\\ExcludeDoctrineLogging');
+            $reader = new AttributeLoader();            
+            $excludeByAnnotation = $reader->loadClassMetadata(new ClassMetadata($this->em->getClassMetadata(get_class($entity))->getName()));
+            
             if($excludeByAnnotation) {
                 return;
             }

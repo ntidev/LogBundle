@@ -4,7 +4,7 @@ namespace NTI\LogBundle\EventListener;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\EventSubscriber;
-use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\Persistence\Event\LifecycleEventArgs;
 
 use Symfony\Component\CssSelector\Parser\Token;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -36,7 +36,7 @@ class DoctrineEventSubscriber implements EventSubscriber
     public function postPersist(LifecycleEventArgs $args)
     {
         $this->logger = new Logger($this->container);
-        $entity = $args->getEntity();
+        $entity = $args->getObject();
         if(is_string($entity)) {
             $entity = null;
         }
@@ -46,7 +46,7 @@ class DoctrineEventSubscriber implements EventSubscriber
     public function postUpdate(LifecycleEventArgs $args)
     {
         $this->logger = new Logger($this->container);
-        $entity = $args->getEntity();
+        $entity = $args->getObject();
         if(is_string($entity)) {
             $entity = null;
         }
@@ -56,7 +56,7 @@ class DoctrineEventSubscriber implements EventSubscriber
     public function preRemove(LifecycleEventArgs $args)
     {
         $this->logger = new Logger($this->container);
-        $entity = $args->getEntity();
+        $entity = $args->getObject();
         if(is_string($entity)) {
             $entity = null;
         }
