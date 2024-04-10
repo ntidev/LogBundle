@@ -25,10 +25,14 @@ class Logger {
     /** @var TokenStorage $tokenStorage */
     private $tokenStorage;
 
+    /** @var EntityManager $em */
+    private $em;
+
     public function __construct(ContainerInterface $container) {
         $this->container = $container;
         $this->serializer = SerializerBuilder::create()->build();
         $this->connection = $container->get('doctrine')->getConnection();
+        $this->em = $container->get('doctrine')->getManager();
         $this->tokenStorage = new TokenStorage();
     }
 
