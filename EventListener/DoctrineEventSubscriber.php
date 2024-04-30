@@ -2,19 +2,13 @@
 
 namespace NTI\LogBundle\EventListener;
 
-use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-
-use Symfony\Component\CssSelector\Parser\Token;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
-use Symfony\Component\Security\Core\SecurityContext;
 use NTI\LogBundle\Entity\Log;
 use NTI\LogBundle\Services\Logger;
 
-class DoctrineEventSubscriber implements EventSubscriber
+class DoctrineEventListener
 {
     private $container;
     /** @var Logger $logger */
