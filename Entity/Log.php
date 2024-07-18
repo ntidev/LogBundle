@@ -6,7 +6,8 @@ use NTI\LogBundle\Annotations\ExcludeDoctrineLogging;
  * Log
  */
 #[ORM\Table(name: 'nti_log')]
- #[ORM\HasLifecycleCallbacks()]
+#[ORM\Entity(repositoryClass: 'NTI\LogBundle\Repository\LogRepository')]
+#[ORM\HasLifecycleCallbacks()]
 class Log
 {
     const LEVEL_NOTICE = "NOTICE";
