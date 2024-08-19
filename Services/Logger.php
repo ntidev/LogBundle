@@ -178,7 +178,7 @@ class Logger {
         $stmt = $this->connection->prepare($sql);
 
         try{
-            $stmt->execute();
+            $stmt->executeQuery();
         } catch(\Exception $ex) {
             error_log($ex->getMessage());
         }
