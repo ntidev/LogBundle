@@ -167,7 +167,9 @@ class Logger {
         $fields = implode(', ', array_keys($sqlParameters));
         $values = array_values($sqlParameters);
         array_walk($values, function(&$val) {
-            $val = '"'.addslashes($val).'"';
+            if($val != null && !is_numeric($val)){
+                $val = '"'.addslashes($val).'"';
+            }
         });
         $values = implode(', ', $values);
 
